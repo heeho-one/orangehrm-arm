@@ -1,0 +1,20 @@
+services:
+  orangehrm:
+    image: heeho-one/orangehrm-arm:test
+    container_name: orangehrm
+    networks:
+      - net_orangehrm
+    restart: unless-stopped
+
+  db_mariadb:
+    image: mariadb:11.4
+    container_name: db_orangehrm
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PW}
+    networks:
+      - net_orangehrm
+    restart: unless-stopped
+
+networks:
+  net_orangehrm:
+    external: true

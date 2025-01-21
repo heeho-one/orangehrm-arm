@@ -1,4 +1,4 @@
-FROM php:8.3-apache-bookworm
+FROM --platform=linux/arm64 php:8.3-apache-bookworm
 
 ENV OHRM_VERSION 5.7
 ENV OHRM_MD5 5bd924a546e29e06c34eec73b014d139
